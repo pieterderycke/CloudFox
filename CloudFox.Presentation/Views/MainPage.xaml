@@ -19,9 +19,9 @@
     shell:SystemTray.IsVisible="True">
 
     <!-- Pivot panel -->
-    <controls:Pivot Name="categoryPivot" Title="{Binding Title}"
+    <phone:Pivot Name="categoryPivot" Title="{Binding Title}"
                     SelectedIndex="{Binding Category, Mode=TwoWay, Converter={StaticResource EnumToIntegerConverter}}">
-        <controls:PivotItem Header="{Binding Path=AppResources.Bookmarks, Source={StaticResource LocalizationHelper}}">
+        <phone:PivotItem Header="{Binding Path=AppResources.Bookmarks, Source={StaticResource LocalizationHelper}}">
             <ListBox Name="bookmarkListBox" Margin="0,0,-12,0" 
                      ItemsSource="{Binding Bookmarks}" 
                      SelectedItem="{Binding SelectedBookmark, Mode=TwoWay}">
@@ -34,9 +34,9 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </controls:PivotItem>
+        </phone:PivotItem>
 
-        <controls:PivotItem Header="{Binding Path=AppResources.History, Source={StaticResource LocalizationHelper}}">
+        <phone:PivotItem Header="{Binding Path=AppResources.History, Source={StaticResource LocalizationHelper}}">
             <ListBox Name="historyListBox" Margin="0,0,-12,0" 
                      ItemsSource="{Binding History}" 
                      SelectedItem="{Binding SelectedHistoryItem, Mode=TwoWay}">
@@ -49,9 +49,9 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </controls:PivotItem>
+        </phone:PivotItem>
 
-        <controls:PivotItem Header="{Binding Path=AppResources.Tabs, Source={StaticResource LocalizationHelper}}">
+        <phone:PivotItem Header="{Binding Path=AppResources.Tabs, Source={StaticResource LocalizationHelper}}">
             <ListBox Name="tabsListBox" Margin="0,0,-12,0"
                      ItemsSource="{Binding Tabs}"
                      SelectedItem="{Binding SelectedTab, Mode=TwoWay}">
@@ -64,8 +64,8 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </controls:PivotItem>
-    </controls:Pivot>
+        </phone:PivotItem>
+    </phone:Pivot>
     
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
