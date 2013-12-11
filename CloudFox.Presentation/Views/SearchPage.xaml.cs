@@ -55,5 +55,10 @@ namespace CloudFox.Presentation.Views
             TombstoneHelper.SaveState(this, searchResultsListbox);
             TombstoneHelper.SaveState(this, searchTextBox);
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            GoogleAnalytics.EasyTracker.GetTracker().SendCurrentView();
+        }
     }
 }

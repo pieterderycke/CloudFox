@@ -96,5 +96,10 @@ namespace CloudFox.Presentation.Views
         {
             ((MainViewModel)this.DataContext).Search.Execute(null);
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            GoogleAnalytics.EasyTracker.GetTracker().SendCurrentView();
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Ninject;
 using CloudFox.Presentation.ViewModels;
+using CloudFox.Presentation.Util;
 
 namespace CloudFox.Presentation.Views
 {
@@ -22,6 +23,11 @@ namespace CloudFox.Presentation.Views
             InitializeComponent();
 
             DataContext = App.Kernel.Get<ProfileViewModel>();
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            GoogleAnalytics.EasyTracker.GetTracker().SendCurrentView();
         }
     }
 }

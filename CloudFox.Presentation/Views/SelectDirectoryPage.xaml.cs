@@ -39,5 +39,10 @@ namespace CloudFox.Presentation.Views
 
             TombstoneHelper.SaveState(this, directoyListBox);
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            GoogleAnalytics.EasyTracker.GetTracker().SendCurrentView();
+        }
     }
 }

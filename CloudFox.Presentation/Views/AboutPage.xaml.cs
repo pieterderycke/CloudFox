@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using CloudFox.Presentation.Util;
 
 namespace CloudFox.Presentation.Views
 {
@@ -18,6 +19,11 @@ namespace CloudFox.Presentation.Views
         public AboutPage()
         {
             InitializeComponent();
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            GoogleAnalytics.EasyTracker.GetTracker().SendCurrentView();
         }
     }
 }
