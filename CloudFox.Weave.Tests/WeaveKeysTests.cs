@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using CloudFox.Weave.Util;
 
 namespace CloudFox.Weave.Tests
@@ -27,8 +27,8 @@ namespace CloudFox.Weave.Tests
 
             WeaveKeys keys = new WeaveKeys(passphraseData, userName);
 
-            AssertExtended.AreEqual(correctHmacKeyBytes, keys.HmacKey);
-            AssertExtended.AreEqual(correctEncrKeyBytes, keys.CryptoKey);
+            CollectionAssert.AreEqual(correctHmacKeyBytes, keys.HmacKey);
+            CollectionAssert.AreEqual(correctEncrKeyBytes, keys.CryptoKey);
         }
     }
 }

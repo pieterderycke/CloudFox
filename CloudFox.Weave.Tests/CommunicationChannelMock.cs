@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CloudFox.Util;
 using Newtonsoft.Json;
 
 namespace CloudFox.Weave.Tests

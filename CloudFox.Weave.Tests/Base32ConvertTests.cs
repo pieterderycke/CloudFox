@@ -1,7 +1,7 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CloudFox.Weave.Util;
 using System.Text;
+using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using CloudFox.Weave.Util;
 
 namespace CloudFox.Weave.Tests
 {

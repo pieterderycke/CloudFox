@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using CloudFox.Weave.Util;
 
 namespace CloudFox.Weave.Tests.JsonConverters
