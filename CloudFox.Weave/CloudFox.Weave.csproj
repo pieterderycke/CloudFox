@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{089C1074-82BF-47DF-A48F-7DD7E8DAEB0B}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudFox.Weave</RootNamespace>
+    <AssemblyName>CloudFox.Weave</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json.WindowsPhone">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.2\lib\sl3-wp\Newtonsoft.Json.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bookmark.cs" />
+    <Compile Include="BookmarkType.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientSession.cs" />
+    <Compile Include="DataNotFoundException.cs" />
+    <Compile Include="DataVerificationException.cs" />
+    <Compile Include="DecryptedCryptoKeys.cs" />
+    <Compile Include="EncryptedDataObject.cs" />
+    <Compile Include="HistoryItem.cs" />
+    <Compile Include="ServerOutOfSyncException.cs" />
+    <Compile Include="Tab.cs" />
+    <Compile Include="TransitionType.cs" />
+    <Compile Include="Util\BookmarkTypeJsonConverter.cs" />
+    <Compile Include="Util\DateTimeJsonConverter.cs" />
+    <Compile Include="Visit.cs" />
+    <Compile Include="WeaveProxy.cs" />
+    <Compile Include="GlobalMetaData.cs" />
+    <Compile Include="HttpCommunicationChannel.cs" />
+    <Compile Include="ICommunicationChannel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuotaInformation.cs" />
+    <Compile Include="RestOperation.cs" />
+    <Compile Include="SortOrder.cs" />
+    <Compile Include="UnsupportedServerStorageVersionException.cs" />
+    <Compile Include="Util\Base16Convert.cs" />
+    <Compile Include="Util\Base32Convert.cs" />
+    <Compile Include="Util\Base64JsonConverter.cs" />
+    <Compile Include="Util\ByteArrayExtensions.cs" />
+    <Compile Include="Util\HexStringJsonConverter.cs" />
+    <Compile Include="Util\UTF8ByteArrayJsonConverter.cs" />
+    <Compile Include="Util\WeaveJsonDateTimeConverter.cs" />
+    <Compile Include="Util\WebRequestExtensions.cs" />
+    <Compile Include="WeaveBasicObject.cs" />
+    <Compile Include="WeaveKeys.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

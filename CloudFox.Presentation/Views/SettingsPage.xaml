@@ -1,0 +1,125 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="CloudFox.Presentation.Views.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:util="clr-namespace:CloudFox.Util;assembly=CloudFox.Util"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:mvvmlight="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
+    xmlns:prismInteractivty="clr-namespace:Microsoft.Practices.Prism.Interactivity;assembly=Microsoft.Practices.Prism.Interactivity"    
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+    
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <ScrollViewer>
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--TitlePanel contains the name of the application and page title-->
+            <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+                <TextBlock x:Name="ApplicationTitle" Text="CLOUDFOX" Style="{StaticResource PhoneTextNormalStyle}"/>
+                <TextBlock x:Name="PageTitle" Text="{Binding Path=AppResources.Settings, Source={StaticResource LocalizationHelper}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            </StackPanel>
+
+            <!--ContentPanel - place additional content here-->
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="{Binding Path=AppResources.Account, Source={StaticResource LocalizationHelper}}"
+                               Style="{StaticResource PhoneTextNormalStyle}" />
+                    <TextBox Name="accountTextBox"
+                             Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                        <i:Interaction.Behaviors>
+                            <util:UpdateOnTextChangedBehavior/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Text="{Binding Path=AppResources.Password, Source={StaticResource LocalizationHelper}}" 
+                               Style="{StaticResource PhoneTextNormalStyle}" />
+                    <PasswordBox Name="passwordPasswordBox"
+                                 Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                        <i:Interaction.Behaviors>
+                            <util:UpdateOnPasswordChangedBehavior/>
+                        </i:Interaction.Behaviors>
+                    </PasswordBox>
+                    <TextBlock Text="{Binding Path=AppResources.SyncKey, Source={StaticResource LocalizationHelper}}"
+                               Style="{StaticResource PhoneTextNormalStyle}" />
+                    <PasswordBox Name="passphrasePasswordBox"
+                                 Password="{Binding Passphrase, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                        <i:Interaction.Behaviors>
+                            <util:UpdateOnPasswordChangedBehavior/>
+                        </i:Interaction.Behaviors>
+                    </PasswordBox>
+                    <CheckBox Name="useDefaultServerCheckBox" 
+                              Content="{Binding Path=AppResources.UseDefaultServer, Source={StaticResource LocalizationHelper}}" 
+                              IsChecked="{Binding UseDefaultServer, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                              Click="CheckBox_Clicked" />
+                    <TextBlock Text="{Binding Path=AppResources.Server, Source={StaticResource LocalizationHelper}}" 
+                               Style="{StaticResource PhoneTextNormalStyle}"
+                               Visibility="{Binding ElementName=useDefaultServerCheckBox, Path=IsChecked, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
+                    <TextBox Name="serverTextBox"
+                             Text="{Binding ServerAddress, Mode=TwoWay, UpdateSourceTrigger=Explicit}" 
+                             InputScope="Url" 
+                             Visibility="{Binding ElementName=useDefaultServerCheckBox, Path=IsChecked, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+                        <i:Interaction.Behaviors>
+                            <util:UpdateOnTextChangedBehavior/>
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <toolkit:ToggleSwitch Name="bookmarksToggleSwitch"
+                                          Header="{Binding Path=AppResources.SynchronizeBookmarks, Source={StaticResource LocalizationHelper}}" 
+                                          IsChecked="{Binding SynchronizeBookmarks, Mode=TwoWay}" />
+                    <toolkit:ToggleSwitch Name="historyToggleSwitch"
+                                          Header="{Binding Path=AppResources.SynchronizeHistory, Source={StaticResource LocalizationHelper}}" 
+                                          IsChecked="{Binding SynchronizeHistory, Mode=TwoWay}" />
+                    <toolkit:ToggleSwitch Name="tabsToggleSwitch"
+                                          Header="{Binding Path=AppResources.SynchronizeTabs, Source={StaticResource LocalizationHelper}}" 
+                                          IsChecked="{Binding SynchronizeTabs, Mode=TwoWay}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.check.rest.png" Text="done" Click="DoneIconButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.cancel.rest.png" Text="cancel" Click="CancelIconButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.questionmark.rest.png" Text="help" Click="HelpIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <i:Interaction.Behaviors>
+        <!-- Localization of the ApplicationBar Buttons -->
+        <util:ApplicationBarButtonTextBehavior Id="done" Text="{Binding Path=AppResources.Done, Source={StaticResource LocalizationHelper}}"/>
+        <util:ApplicationBarButtonTextBehavior Id="cancel" Text="{Binding Path=AppResources.Cancel, Source={StaticResource LocalizationHelper}}"/>
+        <util:ApplicationBarButtonTextBehavior Id="help" Text="{Binding Path=AppResources.Help, Source={StaticResource LocalizationHelper}}"/>
+
+        <!-- Temporary disabled until prism supports WP 7.1 -->
+        <!--
+        <prismInteractivty:ApplicationBarButtonCommand ButtonText="Help" CommandBinding="{Binding Help}" />
+        -->
+    </i:Interaction.Behaviors>
+</phone:PhoneApplicationPage>

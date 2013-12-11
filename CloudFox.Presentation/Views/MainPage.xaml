@@ -1,0 +1,103 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CloudFox.Presentation.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:util="clr-namespace:CloudFox.Util;assembly=CloudFox.Util"    
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:mvvmlight="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
+    xmlns:prismInteractivty="clr-namespace:Microsoft.Practices.Prism.Interactivity;assembly=Microsoft.Practices.Prism.Interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696" 
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!-- Pivot panel -->
+    <controls:Pivot Name="categoryPivot" Title="{Binding Title}"
+                    SelectedIndex="{Binding Category, Mode=TwoWay, Converter={StaticResource EnumToIntegerConverter}}">
+        <controls:PivotItem Header="{Binding Path=AppResources.Bookmarks, Source={StaticResource LocalizationHelper}}">
+            <ListBox Name="bookmarkListBox" Margin="0,0,-12,0" 
+                     ItemsSource="{Binding Bookmarks}" 
+                     SelectedItem="{Binding SelectedBookmark, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,0,0,17">
+                            <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                            <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </controls:PivotItem>
+
+        <controls:PivotItem Header="{Binding Path=AppResources.History, Source={StaticResource LocalizationHelper}}">
+            <ListBox Name="historyListBox" Margin="0,0,-12,0" 
+                     ItemsSource="{Binding History}" 
+                     SelectedItem="{Binding SelectedHistoryItem, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,0,0,17">
+                            <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                            <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </controls:PivotItem>
+
+        <controls:PivotItem Header="{Binding Path=AppResources.Tabs, Source={StaticResource LocalizationHelper}}">
+            <ListBox Name="tabsListBox" Margin="0,0,-12,0"
+                     ItemsSource="{Binding Tabs}"
+                     SelectedItem="{Binding SelectedTab, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,0,0,17">
+                            <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                            <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </controls:PivotItem>
+    </controls:Pivot>
+    
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.refresh.rest.png" Text="refresh" Click="Refresh_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.folder.rest.png" Text="folders" Click="SelectFolder_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.search.rest.png" Text="search" Click="Search_Click"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="settings" Click="SettingsMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="profile" Click="ProfileMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="about" Click="AboutMenuItem_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+    <i:Interaction.Behaviors>
+        <!-- Localization of the ApplicationBar Buttons -->
+        <util:ApplicationBarButtonTextBehavior Id="refresh" Text="{Binding Path=AppResources.Refresh, Source={StaticResource LocalizationHelper}}"/>
+        <util:ApplicationBarButtonTextBehavior Id="folders" Text="{Binding Path=AppResources.Folders, Source={StaticResource LocalizationHelper}}"/>
+        <util:ApplicationBarButtonTextBehavior Id="search" Text="{Binding Path=AppResources.Search, Source={StaticResource LocalizationHelper}}"/>
+
+        <!-- Localization of the ApplicationBar Menu Items -->
+        <util:ApplicationBarMenuItemTextBehavior Id="settings" Text="{Binding Path=AppResources.Settings, Source={StaticResource LocalizationHelper}}"/>
+        <util:ApplicationBarMenuItemTextBehavior Id="profile" Text="{Binding Path=AppResources.Profile, Source={StaticResource LocalizationHelper}}"/>
+        <util:ApplicationBarMenuItemTextBehavior Id="about" Text="{Binding Path=AppResources.About, Source={StaticResource LocalizationHelper}}"/>
+        
+        <!-- Temporary disabled until prism supports WP 7.1 -->
+        <!--
+        <prismInteractivty:ApplicationBarButtonCommand ButtonText="Refresh" CommandBinding="{Binding Refresh}" />
+        <prismInteractivty:ApplicationBarButtonCommand ButtonText="Folders" CommandBinding="{Binding SelectFolder}" />
+        <prismInteractivty:ApplicationBarButtonCommand ButtonText="Search" CommandBinding="{Binding Search}" />
+        -->
+    </i:Interaction.Behaviors>
+
+</phone:PhoneApplicationPage>

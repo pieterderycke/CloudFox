@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>über</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>Cloudfox ist eine freie Open Source Aplikation unter Microsoft Public License (Ms-PL). Der Entwickler kann nicht für entstehende Kosten, Datenverlust oder andere Umstände haftbar gemacht werden, die durch diese Software entstehen.</value>
+  </data>
+  <data name="Bookmarks" xml:space="preserve">
+    <value>lesezeichen</value>
+  </data>
+  <data name="DevelopedBy" xml:space="preserve">
+    <value>Entwickelt von Pieter De Rycke</value>
+  </data>
+  <data name="FillBugReport" xml:space="preserve">
+    <value>Fehlereport ausfüllen.</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>verlauf</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>profil</value>
+  </data>
+  <data name="ProjectWebsite" xml:space="preserve">
+    <value>Projekt Webseite:</value>
+  </data>
+  <data name="SearchDescription" xml:space="preserve">
+    <value>LESEZEICHEN, VERLAUF UND TAB SUCHE</value>
+  </data>
+  <data name="Server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>einstellungen</value>
+  </data>
+  <data name="SetupGuideDescription" xml:space="preserve">
+    <value>Bei Konfigurationsproblemen, bitte die Hilfe auf der Cloudfox Projekt Seite besuchen:</value>
+  </data>
+  <data name="SetupGuideTitle" xml:space="preserve">
+    <value>Hilfe zu Einstellungen</value>
+  </data>
+  <data name="SetupGuideUrlText" xml:space="preserve">
+    <value>How-To Setup Cloudfox</value>
+  </data>
+  <data name="SynchronizeBookmarks" xml:space="preserve">
+    <value>Lesezeichen synchronisieren</value>
+  </data>
+  <data name="SynchronizeHistory" xml:space="preserve">
+    <value>Verlauf synchronisieren</value>
+  </data>
+  <data name="SynchronizeTabs" xml:space="preserve">
+    <value>Tabs synchronisieren</value>
+  </data>
+  <data name="SyncKey" xml:space="preserve">
+    <value>Sync-Schlüssel</value>
+  </data>
+  <data name="SystemRequirementsDescription" xml:space="preserve">
+    <value>Cloudfox benötigt Firefox 5.0 oder höher auf dem PC, es muss keine weitere Software installiert werden.</value>
+  </data>
+  <data name="SystemRequirementsTitle" xml:space="preserve">
+    <value>System Voraussetzungen</value>
+  </data>
+  <data name="SystemRequirementsUrlText" xml:space="preserve">
+    <value>Mozilla Firefox Webseite</value>
+  </data>
+  <data name="Tabs" xml:space="preserve">
+    <value>tabs</value>
+  </data>
+  <data name="UseDefaultServer" xml:space="preserve">
+    <value>Standard Server verwenden</value>
+  </data>
+  <data name="YouHaveIssues" xml:space="preserve">
+    <value>Du hast Probleme?</value>
+  </data>
+  <data name="ConnectingToWeaveServer" xml:space="preserve">
+    <value>Verbinde zu Weave Server...</value>
+  </data>
+  <data name="InvalidCustomServerAddress" xml:space="preserve">
+    <value>Du möchtest dein eigenen Server verwenden, bitte gib die richtige Adresse ein.</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Bitte gib das Passwort für deinen Weave Konto an.</value>
+  </data>
+  <data name="InvalidSyncKey" xml:space="preserve">
+    <value>Bitte gib den Sync-Schlüssel für das Weave Konto an.</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>Bitte gib einen Kontonamen für dein Weave Konto an.</value>
+  </data>
+  <data name="NoNetwork" xml:space="preserve">
+    <value>Kein netzwerk verfügbar.</value>
+  </data>
+  <data name="UpdatingBookmarks" xml:space="preserve">
+    <value>Update Lesezeichen...</value>
+  </data>
+  <data name="UpdatingHistory" xml:space="preserve">
+    <value>Update Verlauf...</value>
+  </data>
+  <data name="UpdatingProfile" xml:space="preserve">
+    <value>Update Profil Informationen...</value>
+  </data>
+  <data name="UpdatingTabs" xml:space="preserve">
+    <value>Update Tabs...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>abbrechen</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>fertig</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>ordner</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>hilfe</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>sync</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>suche</value>
+  </data>
+  <data name="AvailableCollections" xml:space="preserve">
+    <value>Verfügbare sammlungen</value>
+  </data>
+  <data name="KnownClients" xml:space="preserve">
+    <value>Bekannte clients</value>
+  </data>
+  <data name="ServerStorageVersion" xml:space="preserve">
+    <value>Server specher version</value>
+  </data>
+  <data name="WeaveNode" xml:space="preserve">
+    <value>Weave knoten</value>
+  </data>
+  <data name="NoHistoryAvailable" xml:space="preserve">
+    <value>Keine historie verfügbar.</value>
+  </data>
+  <data name="NoTabsAvailable" xml:space="preserve">
+    <value>Keine tabs verfügbar.</value>
+  </data>
+  <data name="SpecialThanks" xml:space="preserve">
+    <value>Speziellen dank an die folgenden leute:</value>
+  </data>
+  <data name="UnableToDecryptError" xml:space="preserve">
+    <value>Die antwort des Weave services kann nicht entschlüsselt werden. Bitte überprüfe die zugangsdaten.</value>
+  </data>
+</root>
